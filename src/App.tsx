@@ -43,7 +43,7 @@ export default function App() {
   // Scroll spy to highlight active section in Navbar
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'certifications', 'education', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'education', 'certifications', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -140,7 +140,7 @@ export default function App() {
 
           {/* Desktop Navigation Links */}
           <ul className="hidden md:flex items-center gap-8 font-medium">
-            {['home', 'about', 'skills', 'certifications', 'education', 'projects', 'contact'].map((section) => (
+            {['home', 'about', 'skills', 'education', 'certifications', 'projects', 'contact'].map((section) => (
               <li key={section}>
                 <a 
                   href={`#${section}`}
@@ -688,7 +688,128 @@ export default function App() {
         </motion.div>
       </section>
 
-      {/* Certifications Section (Full width, placed BEFORE Education) */}
+      {/* Education Section (Full width, placed BEFORE Certifications) */}
+      <section id="education" className="py-24 px-4 md:px-8 max-w-5xl mx-auto border-t border-slate-900">
+        <div className="mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold mb-3">
+            <GraduationCap className="w-3.5 h-3.5 text-teal-400" />
+            <span>Academic Background</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white flex items-center gap-3">
+            <span>Education Timeline</span>
+          </h2>
+          <p className="text-sm md:text-base text-slate-400 mt-2 max-w-2xl">
+            Formal education, degree programs, and academic milestones.
+          </p>
+          <div className="h-1 w-20 bg-teal-500 rounded-full mt-4" />
+        </div>
+
+        <div className="relative pl-8 md:pl-12 border-l-2 border-slate-800 space-y-12">
+          
+          {/* Parul University */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            {/* Node icon indicator */}
+            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-teal-500 flex items-center justify-center text-xs text-teal-400 font-bold shadow-lg shadow-teal-500/25">
+              PU
+            </div>
+            
+            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/25 hover:bg-slate-900/60 transition duration-300 shadow-lg">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">B.Tech – Artificial Intelligence</h3>
+                  <h4 className="text-base font-semibold text-slate-300">Parul University</h4>
+                </div>
+                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-teal-500/10 border border-teal-500/25 text-teal-300">
+                  2023 – 2027
+                </span>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed my-4">
+                Specialized in core Artificial Intelligence, Machine Learning, Deep Learning, Neural Networks, Computer Vision, Natural Language Processing, and Advanced Data Structures & Algorithms.
+              </p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
+                <span>Current Academic Standing:</span>
+                <span className="px-3 py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 font-bold text-base">
+                  CGPA: 7.98
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Narayana Junior College */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-xs text-slate-400 font-bold">
+              NC
+            </div>
+            
+            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300 shadow-lg">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">Intermediate (MPC)</h3>
+                  <h4 className="text-base font-semibold text-slate-300">Narayana Junior College, Srikakulam</h4>
+                </div>
+                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
+                  2021 – 2023
+                </span>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed my-4">
+                Focused on Mathematics, Physics, and Chemistry with a strong emphasis on analytical problem-solving and rigorous scientific principles.
+              </p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
+                <span>Academic Score:</span>
+                <span className="px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 font-bold text-base">
+                  95%
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Oxford High School */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-xs text-slate-400 font-bold">
+              OH
+            </div>
+            
+            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300 shadow-lg">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">10th Standard (SSC)</h3>
+                  <h4 className="text-base font-semibold text-slate-300">Oxford High School, Srikakulam</h4>
+                </div>
+                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
+                  2020 – 2021
+                </span>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed my-4">
+                Secondary School Certificate with distinction in science, mathematics, and computer applications.
+              </p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
+                <span>Academic Score:</span>
+                <span className="px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 font-bold text-base">
+                  96%
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* Certifications Section (Full width, placed AFTER Education) */}
       <section id="certifications" className="py-24 px-4 md:px-8 max-w-5xl mx-auto border-t border-slate-900">
         <div className="mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold mb-3">
@@ -995,127 +1116,6 @@ export default function App() {
                     </span>
                   ))}
                 </div>
-              </div>
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* Education Section (Full width, placed AFTER Certifications) */}
-      <section id="education" className="py-24 px-4 md:px-8 max-w-5xl mx-auto border-t border-slate-900">
-        <div className="mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold mb-3">
-            <GraduationCap className="w-3.5 h-3.5 text-teal-400" />
-            <span>Academic Background</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white flex items-center gap-3">
-            <span>Education Timeline</span>
-          </h2>
-          <p className="text-sm md:text-base text-slate-400 mt-2 max-w-2xl">
-            Formal education, degree programs, and academic milestones.
-          </p>
-          <div className="h-1 w-20 bg-teal-500 rounded-full mt-4" />
-        </div>
-
-        <div className="relative pl-8 md:pl-12 border-l-2 border-slate-800 space-y-12">
-          
-          {/* Parul University */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            {/* Node icon indicator */}
-            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-teal-500 flex items-center justify-center text-xs text-teal-400 font-bold shadow-lg shadow-teal-500/25">
-              PU
-            </div>
-            
-            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/25 hover:bg-slate-900/60 transition duration-300 shadow-lg">
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">B.Tech – Artificial Intelligence</h3>
-                  <h4 className="text-base font-semibold text-slate-300">Parul University</h4>
-                </div>
-                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-teal-500/10 border border-teal-500/25 text-teal-300">
-                  2023 – 2027
-                </span>
-              </div>
-              <p className="text-sm text-slate-400 leading-relaxed my-4">
-                Specialized in core Artificial Intelligence, Machine Learning, Deep Learning, Neural Networks, Computer Vision, Natural Language Processing, and Advanced Data Structures & Algorithms.
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
-                <span>Current Academic Standing:</span>
-                <span className="px-3 py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 font-bold text-base">
-                  CGPA: 7.98
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Narayana Junior College */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-xs text-slate-400 font-bold">
-              NC
-            </div>
-            
-            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300 shadow-lg">
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">Intermediate (MPC)</h3>
-                  <h4 className="text-base font-semibold text-slate-300">Narayana Junior College, Srikakulam</h4>
-                </div>
-                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
-                  2021 – 2023
-                </span>
-              </div>
-              <p className="text-sm text-slate-400 leading-relaxed my-4">
-                Focused on Mathematics, Physics, and Chemistry with a strong emphasis on analytical problem-solving and rigorous scientific principles.
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
-                <span>Academic Score:</span>
-                <span className="px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 font-bold text-base">
-                  95%
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Oxford High School */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-xs text-slate-400 font-bold">
-              OH
-            </div>
-            
-            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300 shadow-lg">
-              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">10th Standard (SSC)</h3>
-                  <h4 className="text-base font-semibold text-slate-300">Oxford High School, Srikakulam</h4>
-                </div>
-                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
-                  2020 – 2021
-                </span>
-              </div>
-              <p className="text-sm text-slate-400 leading-relaxed my-4">
-                Secondary School Certificate with distinction in science, mathematics, and computer applications.
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
-                <span>Academic Score:</span>
-                <span className="px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 font-bold text-base">
-                  96%
-                </span>
               </div>
             </div>
           </motion.div>
