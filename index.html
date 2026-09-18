@@ -328,43 +328,114 @@
 
         .about-image {
             position: relative;
-            height: 400px;
+            min-height: 400px;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            border: 2px solid rgba(99, 102, 241, 0.2);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(99, 102, 241, 0.15);
+        }
+
+        .ai-motion-wrapper {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: pulse 3s ease-in-out infinite;
+            animation: floatPhoto 4s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(20, 184, 166, 0.2), transparent);
-            animation: shimmer 4s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        .emoji-large {
-            font-size: 120px;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
+        @keyframes floatPhoto {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .ai-orbit-ring {
+            position: absolute;
+            inset: -14px;
+            border-radius: 28px;
+            border: 1.5px dashed rgba(20, 184, 166, 0.6);
+            pointer-events: none;
+            animation: spinRing 18s linear infinite;
+        }
+
+        .ai-orbit-ring.inner {
+            inset: -6px;
+            border-radius: 24px;
+            border: 1.5px solid rgba(99, 102, 241, 0.6);
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            animation: spinRingRev 12s linear infinite;
+        }
+
+        @keyframes spinRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes spinRingRev {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        .photo-container {
+            position: relative;
+            width: 220px;
+            height: 260px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #020617;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .about-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-container:hover .about-photo {
+            transform: scale(1.05);
+        }
+
+        .ai-scanner-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2dd4bf, #6366f1, transparent);
+            box-shadow: 0 0 12px #2dd4bf;
+            pointer-events: none;
+            animation: scanLine 3.2s ease-in-out infinite;
+        }
+
+        @keyframes scanLine {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .ai-floating-badge {
+            margin-top: 1.25rem;
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(20, 184, 166, 0.4);
+            color: #5eead4;
+            font-size: 0.8rem;
+            font-family: monospace;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.2);
         }
 
         /* Skills Section */
@@ -946,7 +1017,17 @@
                 </div>
             </div>
             <div class="about-image">
-                <div class="emoji-large">👩‍💻</div>
+                <div class="ai-motion-wrapper">
+                    <div class="ai-orbit-ring"></div>
+                    <div class="ai-orbit-ring inner"></div>
+                    <div class="photo-container">
+                        <img src="/bhagyasri.jpg" alt="BhagyaSri Korlam" class="about-photo">
+                        <div class="ai-scanner-line"></div>
+                    </div>
+                </div>
+                <div class="ai-floating-badge">
+                    <span style="color: #2dd4bf;">●</span> AI AGENT ACTIVE • CGPA 7.98
+                </div>
             </div>
         </div>
     </section>
@@ -1027,7 +1108,7 @@
                             <span class="education-duration">2023 – 2027</span>
                         </div>
                         <p class="education-institution">Parul University</p>
-                        <p class="education-score">Current CGPA: <strong>7.84</strong></p>
+                        <p class="education-score">Current CGPA: <strong>7.98</strong></p>
                     </div>
 
                     <div class="education-card">
@@ -1053,6 +1134,41 @@
             <div class="certifications-content">
                 <h3>🏆 Certifications</h3>
                 <div class="certifications-list">
+                    <!-- Agentic AI Masters 2026 -->
+                    <div class="cert-card">
+                        <div class="cert-icon">🤖</div>
+                        <div class="cert-details">
+                            <h4>Agentic AI Masters 2026: LangChain, LangGraph & CrewAI</h4>
+                            <p class="cert-issuer">Udemy • Certificate of Completion</p>
+                            <p class="cert-date">Completed on Aug 27, 2026</p>
+                            <p style="font-size: 0.78rem; color: #94a3b8; font-family: monospace; margin-top: 0.3rem;">
+                                Cert No: UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff | Ref: 0004
+                            </p>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="https://ude.my/UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff" target="_blank" rel="noopener" style="color: #2dd4bf; text-decoration: none; font-size: 0.8rem; font-weight: 600;">
+                                    Verify Certificate ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HP LIFE Data Science & Analytics -->
+                    <div class="cert-card">
+                        <div class="cert-icon">📊</div>
+                        <div class="cert-details">
+                            <h4>Data Science & Analytics</h4>
+                            <p class="cert-issuer">HP LIFE online course • HP Foundation</p>
+                            <p class="cert-date">Presented 6/9/2026 • Michele Malejki, Exec. Director</p>
+                            <p style="font-size: 0.78rem; color: #cbd5e1; margin-top: 0.3rem; line-height: 1.4;">
+                                Mastered leading data science practices, tools, business impact analysis, and key career analytics skills.
+                            </p>
+                            <p style="font-size: 0.75rem; color: #94a3b8; font-family: monospace; margin-top: 0.3rem;">
+                                Serial No: c5d658cb-ea28-4441-a2d3-2a43512447e6
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Java Certification -->
                     <div class="cert-card">
                         <div class="cert-icon">🎓</div>
                         <div class="cert-details">
@@ -1062,6 +1178,7 @@
                         </div>
                     </div>
 
+                    <!-- Full Stack Developer -->
                     <div class="cert-card">
                         <div class="cert-icon">⭐</div>
                         <div class="cert-details">

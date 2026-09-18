@@ -26,7 +26,7 @@ import {
   ArrowUp
 } from 'lucide-react';
 import { WordsPullUp } from './components/WordsPullUp';
-import heroImg from './assets/hero.png';
+import bhagyasriImg from './assets/bhagyasri.jpg';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
 
@@ -261,32 +261,91 @@ export default function App() {
                   <span className="text-xs text-slate-500 font-mono tracking-widest">BHAGYA.AI</span>
                 </div>
 
-                {/* Card Center: Developer Illustration */}
-                <div className="flex flex-col items-center justify-center py-6 z-10" style={{ transform: 'translateZ(60px)' }}>
-                  <div className="relative group">
-                    <div className="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
-                    <div className="relative w-28 h-28 rounded-full overflow-hidden bg-slate-950 border-2 border-white/15 p-1 flex items-center justify-center">
-                      <img 
-                        src={heroImg} 
-                        alt="BhagyaSri" 
-                        className="w-full h-full object-contain rounded-full bg-gradient-to-b from-indigo-950 to-slate-900"
-                      />
-                    </div>
-                  </div>
+                {/* Card Center: AI Animated & Motioned Developer Portrait */}
+                <div className="flex flex-col items-center justify-center py-4 z-10" style={{ transform: 'translateZ(60px)' }}>
+                  <motion.div 
+                    animate={{ y: [-5, 5, -5] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                    className="relative flex items-center justify-center"
+                  >
+                    {/* Pulsing AI Energy Aura */}
+                    <motion.div 
+                      animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.7, 0.35] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                      className="absolute -inset-4 bg-gradient-to-r from-indigo-500 via-teal-400 to-pink-500 rounded-full blur-xl pointer-events-none"
+                    />
 
-                  <div className="mt-4 flex gap-4">
+                    {/* Outer Rotating Cyber Orbital Ring (Clockwise) */}
+                    <motion.div 
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                      className="absolute -inset-3.5 rounded-full border border-dashed border-teal-400/40 pointer-events-none"
+                    />
+
+                    {/* Inner Rotating Tech Accent Ring (Counter-Clockwise) */}
+                    <motion.div 
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+                      className="absolute -inset-1.5 rounded-full border border-indigo-400/50 border-t-transparent border-b-transparent pointer-events-none"
+                    />
+
+                    {/* AI Floating Status Chip Top */}
+                    <motion.div 
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                      className="absolute -top-3.5 z-20 px-2.5 py-0.5 rounded-full bg-slate-950/90 border border-teal-400/50 text-[10px] font-mono text-teal-300 shadow-lg shadow-teal-500/20 flex items-center gap-1.5 backdrop-blur-md whitespace-nowrap"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-ping" />
+                      <span className="font-semibold tracking-wider">AI AGENT ACTIVE</span>
+                    </motion.div>
+
+                    {/* Main Portrait Frame with Scanner Line */}
+                    <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden bg-slate-950 border-2 border-white/20 shadow-2xl p-1 flex items-center justify-center">
+                      <img 
+                        src={bhagyasriImg} 
+                        alt="BhagyaSri Korlam" 
+                        className="w-full h-full object-cover object-top rounded-xl"
+                      />
+                      
+                      {/* Holographic AI Scanline Animation */}
+                      <motion.div 
+                        className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-teal-300 to-transparent shadow-[0_0_12px_#2dd4bf] z-20 pointer-events-none"
+                        animate={{ top: ['0%', '100%', '0%'] }}
+                        transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+                      />
+
+                      {/* Sci-fi Corner Brackets */}
+                      <div className="absolute top-1 left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-teal-400 pointer-events-none" />
+                      <div className="absolute top-1 right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-teal-400 pointer-events-none" />
+                      <div className="absolute bottom-1 left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-teal-400 pointer-events-none" />
+                      <div className="absolute bottom-1 right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-teal-400 pointer-events-none" />
+                    </div>
+
+                    {/* Bottom Floating Skill Chip */}
+                    <motion.div 
+                      animate={{ y: [0, 3, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                      className="absolute -bottom-3.5 z-20 px-2.5 py-0.5 rounded-full bg-slate-950/90 border border-indigo-400/50 text-[10px] font-mono text-indigo-300 shadow-lg shadow-indigo-500/20 flex items-center gap-1.5 backdrop-blur-md whitespace-nowrap"
+                    >
+                      <span>⚡</span>
+                      <span className="font-semibold">LangGraph & CrewAI</span>
+                    </motion.div>
+                  </motion.div>
+
+                  <div className="mt-5 flex items-center gap-4">
                     <motion.img 
                       animate={{ rotate: 360 }}
                       transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
                       src={reactLogo} 
-                      className="w-7 h-7 text-indigo-400" 
+                      className="w-6 h-6 text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]" 
                       alt="React" 
                     />
+                    <div className="h-4 w-[1px] bg-slate-700" />
                     <motion.img 
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{ duration: 3, repeat: Infinity }}
+                      animate={{ y: [0, -4, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity }}
                       src={viteLogo} 
-                      className="w-7 h-7" 
+                      className="w-6 h-6 drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" 
                       alt="Vite" 
                     />
                   </div>
@@ -404,6 +463,25 @@ export default function App() {
               viewport={{ once: true }}
               className="p-6 rounded-3xl bg-slate-900/60 backdrop-blur-xl border border-white/5 shadow-xl flex flex-col justify-between"
             >
+              {/* Profile Card Header with Photo */}
+              <div className="flex items-center gap-4 pb-5 border-b border-white/5 mb-5">
+                <div className="relative w-16 h-16 rounded-2xl overflow-hidden border border-teal-400/40 p-0.5 bg-slate-950 shrink-0 shadow-lg shadow-teal-500/10">
+                  <img src={bhagyasriImg} alt="BhagyaSri Korlam" className="w-full h-full object-cover object-top rounded-xl" />
+                  <span className="absolute bottom-1 right-1 w-3 h-3 rounded-full bg-emerald-400 border-2 border-slate-950" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-base flex items-center gap-2">
+                    BhagyaSri Korlam
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/20">AI</span>
+                  </h4>
+                  <p className="text-xs text-slate-400">Parul University • CGPA 7.98</p>
+                  <p className="text-[11px] text-teal-400 font-mono mt-0.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                    Available for Projects & Roles
+                  </p>
+                </div>
+              </div>
+
               <h3 className="text-lg font-bold text-white mb-4">Connect With Me</h3>
               
               <div className="space-y-4">
@@ -643,7 +721,7 @@ export default function App() {
                   <h4 className="text-sm font-semibold text-slate-300 mb-4">Parul University</h4>
                   <div className="flex items-center gap-2 text-sm text-slate-400">
                     <span>Current CGPA:</span>
-                    <strong className="text-white text-base">7.84</strong>
+                    <strong className="text-white text-base">7.98</strong>
                   </div>
                 </div>
               </motion.div>
@@ -715,6 +793,99 @@ export default function App() {
 
             <div className="space-y-6">
               
+              {/* Agentic AI Masters 2026 */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                className="p-6 rounded-3xl bg-slate-900/40 border border-teal-500/20 hover:border-teal-400/40 flex flex-col gap-3 transition duration-300 relative overflow-hidden group shadow-lg shadow-teal-500/5"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 border border-teal-500/20">
+                    <Brain className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/25">
+                        Udemy • Aug 27, 2026
+                      </span>
+                      <a 
+                        href="https://ude.my/UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs text-teal-400 hover:text-teal-300 underline font-medium"
+                      >
+                        <span>Verify</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
+                    <h3 className="text-lg font-bold text-white leading-snug">
+                      Agentic AI Masters 2026: LangChain, LangGraph & CrewAI
+                    </h3>
+                    <p className="text-xs text-slate-400 mt-1">Certificate of Completion</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {['LangChain', 'LangGraph', 'CrewAI', 'Multi-Agent AI'].map(tag => (
+                    <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-400 gap-2">
+                  <span className="truncate">Cert No: <span className="text-slate-300">UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff</span></span>
+                  <span>Ref: <span className="text-teal-400 font-bold">0004</span></span>
+                </div>
+              </motion.div>
+
+              {/* Data Science & Analytics (HP LIFE) */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                className="p-6 rounded-3xl bg-slate-900/40 border border-indigo-500/20 hover:border-indigo-400/40 flex flex-col gap-3 transition duration-300 relative overflow-hidden group shadow-lg shadow-indigo-500/5"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
+                    <Database className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/25">
+                        HP LIFE • HP Foundation
+                      </span>
+                      <span className="text-xs text-indigo-300 font-mono">Presented 6/9/2026</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-white leading-snug">
+                      Data Science & Analytics
+                    </h3>
+                    <p className="text-xs text-slate-400 mt-1">
+                      Executive Director: Michele Malejki, HP Foundation
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Leading data science and analytics practices, methodologies, business impact analysis, and essential career analytics skills.
+                </p>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {['Data Science', 'Analytics', 'Business Intelligence', 'HP LIFE'].map(tag => (
+                    <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-slate-400 truncate">
+                  Serial No: <span className="text-slate-300">c5d658cb-ea28-4441-a2d3-2a43512447e6</span>
+                </div>
+              </motion.div>
+
               {/* Java Certification */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -728,7 +899,7 @@ export default function App() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Java: Mastering Fundamentals</h3>
-                  <h4 className="text-sm font-semibold text-pink-400 mb-3">Scaler Topics</h4>
+                  <h4 className="text-sm font-semibold text-pink-400 mb-2">Scaler Topics</h4>
                   <p className="text-xs text-slate-500">Certificate of Excellence • March 2026</p>
                 </div>
               </motion.div>
@@ -746,7 +917,7 @@ export default function App() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Full Stack Developer</h3>
-                  <h4 className="text-sm font-semibold text-pink-400 mb-3">Skill High</h4>
+                  <h4 className="text-sm font-semibold text-pink-400 mb-2">Skill High</h4>
                   <p className="text-xs text-slate-500">Certificate of Excellence • 2025</p>
                 </div>
               </motion.div>
