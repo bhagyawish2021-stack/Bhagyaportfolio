@@ -945,7 +945,7 @@ export default function App() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          {/* Project 1: Typer */}
+          {/* Project 1: AI/ML Typing Speed Analyzer */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -957,15 +957,15 @@ export default function App() {
               <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 text-2xl font-bold">
                 ⚡
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Typer</h3>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">AI Typing Speed Analyzer</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                An AI-based typing speed and analytics platform that tracks finger metrics, offers dynamic speed indicators, and visualizes comprehensive user speed graphs.
+                Full-stack AI web app analyzing real-time keystroke dynamics with machine learning to predict cognitive states (Focused, Tired, Distracted) with interactive metrics.
               </p>
             </div>
             
             <div>
               <div className="flex flex-wrap gap-1.5 mb-6">
-                {['React', 'AI', 'Analytics'].map((tag) => (
+                {['React', 'Python', 'Flask', 'ML'].map((tag) => (
                   <span key={tag} className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-950 border border-white/5 text-slate-400">
                     {tag}
                   </span>
@@ -974,7 +974,7 @@ export default function App() {
               
               <div className="grid grid-cols-2 gap-4">
                 <a 
-                  href="https://github.com/bhagyawish2021-stack/Typer" 
+                  href="https://github.com/bhagyawish2021-stack/AI_Typer_Analyzer" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-slate-950 border border-white/5 hover:border-indigo-500/40 text-slate-300 hover:text-white transition duration-300"
@@ -989,33 +989,33 @@ export default function App() {
                   className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-indigo-500 hover:bg-indigo-600 text-white transition duration-300"
                 >
                   <Globe className="w-3.5 h-3.5" />
-                  <span>Demo</span>
+                  <span>Live Demo</span>
                 </a>
               </div>
             </div>
           </motion.div>
 
-          {/* Project 2: SSMMK Agencies */}
+          {/* Project 2: Reconciliation Engine */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -8 }}
-            className="group flex flex-col justify-between p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-indigo-500/30 hover:bg-slate-900/60 shadow-lg hover:shadow-indigo-500/5 transition duration-300"
+            className="group flex flex-col justify-between p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/30 hover:bg-slate-900/60 shadow-lg hover:shadow-teal-500/5 transition duration-300"
           >
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 text-2xl font-bold">
-                🏢
+              <div className="w-12 h-12 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 text-2xl font-bold">
+                🧠
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">SSMMK Agencies</h3>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Reconciliation Engine</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                A custom aquaculture distributor landing site with high-performance responsive graphics, product queries, catalog lists, and clean modular structures.
+                Production-quality system that ingests asynchronous typing event streams from multiple users, predicts mental states using Random Forest, and deterministically resolves conflicting state predictions.
               </p>
             </div>
             
             <div>
               <div className="flex flex-wrap gap-1.5 mb-6">
-                {['HTML', 'CSS', 'JavaScript'].map((tag) => (
+                {['Python', 'Random Forest', 'Stream Processing', 'ML'].map((tag) => (
                   <span key={tag} className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-950 border border-white/5 text-slate-400">
                     {tag}
                   </span>
@@ -1024,10 +1024,10 @@ export default function App() {
               
               <div className="grid grid-cols-2 gap-4">
                 <a 
-                  href="https://github.com/bhagyawish2021-stack/ssmmk-agencies" 
+                  href="https://github.com/bhagyawish2021-stack/Reconciliation-Engine" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-slate-950 border border-white/5 hover:border-indigo-500/40 text-slate-300 hover:text-white transition duration-300 col-span-2"
+                  className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-slate-950 border border-white/5 hover:border-teal-500/40 text-slate-300 hover:text-white transition duration-300 col-span-2"
                 >
                   <Github className="w-3.5 h-3.5" />
                   <span>View Repository</span>
@@ -1036,7 +1036,107 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* Project 3: Word Predictor */}
+          {/* Project 3: WatchTransfer */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -8 }}
+            className="group flex flex-col justify-between p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-pink-500/30 hover:bg-slate-900/60 shadow-lg hover:shadow-pink-500/5 transition duration-300"
+          >
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 mb-6 text-2xl font-bold">
+                🏥
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">WatchTransfer</h3>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                Clinical notification responsibility engine eliminating missed critical lab and imaging results and handoff alert fatigue, delivering alerts to the right clinician at the right time.
+              </p>
+            </div>
+            
+            <div>
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {['React', 'Healthcare AI', 'Clinical Engine', 'Full Stack'].map((tag) => (
+                  <span key={tag} className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-950 border border-white/5 text-slate-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <a 
+                  href="https://github.com/bhagyawish2021-stack/WatchTransfer" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-slate-950 border border-white/5 hover:border-pink-500/40 text-slate-300 hover:text-white transition duration-300"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  <span>GitHub</span>
+                </a>
+                <a 
+                  href="https://frontend-l6cq.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-pink-500 hover:bg-pink-600 text-white transition duration-300"
+                >
+                  <Globe className="w-3.5 h-3.5" />
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Project 4: Aqua Platform */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -8 }}
+            className="group flex flex-col justify-between p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-cyan-500/30 hover:bg-slate-900/60 shadow-lg hover:shadow-cyan-500/5 transition duration-300"
+          >
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 text-2xl font-bold">
+                🌊
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Aqua Aquaculture Platform</h3>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                End-to-end aquaculture intelligence ecosystem integrating ML consultation APIs, seafood supply chains, pond supplies auditing, and real-time farmer dashboards.
+              </p>
+            </div>
+            
+            <div>
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {['React', 'ML-API', 'Backend', 'Full Stack'].map((tag) => (
+                  <span key={tag} className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-950 border border-white/5 text-slate-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <a 
+                  href="https://github.com/bhagyawish2021-stack/Aqua" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-slate-950 border border-white/5 hover:border-cyan-500/40 text-slate-300 hover:text-white transition duration-300"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  <span>GitHub</span>
+                </a>
+                <a 
+                  href="https://frontend-eight-pearl-75.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-cyan-500 hover:bg-cyan-600 text-white transition duration-300"
+                >
+                  <Globe className="w-3.5 h-3.5" />
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Project 5: Next Word Predictor */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1048,15 +1148,15 @@ export default function App() {
               <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 text-2xl font-bold">
                 📝
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Word Predictor</h3>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Next Word Predictor</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                Python NLP package utilizing n-gram predictions and custom token scoring algorithms to analyze sequences and predict text metrics.
+                Smart Natural Language Processing application using N-gram language modeling and custom token scoring algorithms to analyze sequences and predict text metrics.
               </p>
             </div>
             
             <div>
               <div className="flex flex-wrap gap-1.5 mb-6">
-                {['Python', 'ML', 'NLP'].map((tag) => (
+                {['Python', 'Flask', 'NLP', 'N-Gram'].map((tag) => (
                   <span key={tag} className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-950 border border-white/5 text-slate-400">
                     {tag}
                   </span>
@@ -1069,6 +1169,47 @@ export default function App() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-slate-950 border border-white/5 hover:border-indigo-500/40 text-slate-300 hover:text-white transition duration-300 col-span-2"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Project 6: SSMMK Agencies */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -8 }}
+            className="group flex flex-col justify-between p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/30 hover:bg-slate-900/60 shadow-lg hover:shadow-teal-500/5 transition duration-300"
+          >
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 text-2xl font-bold">
+                🏢
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">SSMMK Agencies</h3>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                Responsive aquaculture business website for Sri Sai Murali Mohana Krishna Agencies in AP, with interactive product catalogs for shrimp feed and pond chemicals.
+              </p>
+            </div>
+            
+            <div>
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {['HTML5', 'CSS3', 'JavaScript', 'Responsive'].map((tag) => (
+                  <span key={tag} className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-950 border border-white/5 text-slate-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <a 
+                  href="https://github.com/bhagyawish2021-stack/ssmmk-agencies" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold bg-slate-950 border border-white/5 hover:border-teal-500/40 text-slate-300 hover:text-white transition duration-300 col-span-2"
                 >
                   <Github className="w-3.5 h-3.5" />
                   <span>View Repository</span>
