@@ -23,16 +23,21 @@ import {
   Heart,
   Globe,
   Compass,
-  ArrowUp
+  ArrowUp,
+  Eye
 } from 'lucide-react';
 import { WordsPullUp } from './components/WordsPullUp';
 import bhagyasriImg from './assets/bhagyasri.jpg';
 import reactLogo from './assets/react.svg';
 import viteLogo from './assets/vite.svg';
+import udemyCert from './assets/certificates/udemy-agentic-ai.png';
+import hpCert from './assets/certificates/hp-data-science.png';
+import scalerCert from './assets/certificates/scaler-java.png';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [previewCert, setPreviewCert] = useState<{ title: string; image: string } | null>(null);
 
 
   // Scroll spy to highlight active section in Navbar
@@ -799,7 +804,7 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-teal-500/20 hover:border-teal-400/40 flex flex-col gap-3 transition duration-300 relative overflow-hidden group shadow-lg shadow-teal-500/5"
+                className="p-6 rounded-3xl bg-slate-900/40 border border-teal-500/20 hover:border-teal-400/40 flex flex-col gap-4 transition duration-300 relative overflow-hidden group shadow-lg shadow-teal-500/5"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 shrink-0 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 border border-teal-500/20">
@@ -808,7 +813,7 @@ export default function App() {
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
                       <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/25">
-                        Udemy • Aug 27, 2026
+                        Udemy • 62 Hours • Aug 27, 2026
                       </span>
                       <a 
                         href="https://ude.my/UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff" 
@@ -823,12 +828,32 @@ export default function App() {
                     <h3 className="text-lg font-bold text-white leading-snug">
                       Agentic AI Masters 2026: LangChain, LangGraph & CrewAI
                     </h3>
-                    <p className="text-xs text-slate-400 mt-1">Certificate of Completion</p>
+                    <p className="text-xs text-slate-400 mt-1">
+                      Instructors: Dr. Satyajit Pattnaik & Satyajit Pattnaik
+                    </p>
+                  </div>
+                </div>
+
+                {/* Certificate Thumbnail Preview Banner */}
+                <div 
+                  onClick={() => setPreviewCert({ title: 'Agentic AI Masters 2026 (Udemy)', image: udemyCert })}
+                  className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] max-h-44 flex items-center justify-center"
+                >
+                  <img 
+                    src={udemyCert} 
+                    alt="Udemy Agentic AI Certificate" 
+                    className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/50 group-hover/thumb:bg-slate-950/20 transition flex items-center justify-center">
+                    <span className="px-3 py-1.5 rounded-xl bg-slate-900/90 text-xs font-semibold text-teal-300 border border-teal-500/40 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>Click to View Certificate</span>
+                    </span>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 pt-1">
-                  {['LangChain', 'LangGraph', 'CrewAI', 'Multi-Agent AI'].map(tag => (
+                  {['LangChain', 'LangGraph', 'CrewAI', 'Multi-Agent AI', '62 Hours'].map(tag => (
                     <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
                       {tag}
                     </span>
@@ -847,7 +872,7 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-indigo-500/20 hover:border-indigo-400/40 flex flex-col gap-3 transition duration-300 relative overflow-hidden group shadow-lg shadow-indigo-500/5"
+                className="p-6 rounded-3xl bg-slate-900/40 border border-indigo-500/20 hover:border-indigo-400/40 flex flex-col gap-4 transition duration-300 relative overflow-hidden group shadow-lg shadow-indigo-500/5"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 shrink-0 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
@@ -869,6 +894,24 @@ export default function App() {
                   </div>
                 </div>
 
+                {/* Certificate Thumbnail Preview Banner */}
+                <div 
+                  onClick={() => setPreviewCert({ title: 'Data Science & Analytics (HP LIFE)', image: hpCert })}
+                  className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] max-h-44 flex items-center justify-center"
+                >
+                  <img 
+                    src={hpCert} 
+                    alt="HP LIFE Data Science Certificate" 
+                    className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/50 group-hover/thumb:bg-slate-950/20 transition flex items-center justify-center">
+                    <span className="px-3 py-1.5 rounded-xl bg-slate-900/90 text-xs font-semibold text-indigo-300 border border-indigo-500/40 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>Click to View Certificate</span>
+                    </span>
+                  </div>
+                </div>
+
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Leading data science and analytics practices, methodologies, business impact analysis, and essential career analytics skills.
                 </p>
@@ -886,21 +929,55 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* Java Certification */}
+              {/* Java Certification (Scaler Topics) */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-pink-500/25 flex items-start gap-4 transition duration-300"
+                className="p-6 rounded-3xl bg-slate-900/40 border border-pink-500/20 hover:border-pink-500/40 flex flex-col gap-4 transition duration-300 relative overflow-hidden group shadow-lg shadow-pink-500/5"
               >
-                <div className="w-12 h-12 shrink-0 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400">
-                  <Award className="w-6 h-6" />
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 border border-pink-500/20">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-pink-500/10 text-pink-300 border border-pink-500/25">
+                        Scaler Topics • 27 March 2026
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">Java: Mastering the Fundamentals</h3>
+                    <p className="text-xs text-slate-400">
+                      Anshuman Singh, Co-founder SCALER • Certificate of Excellence
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Java: Mastering Fundamentals</h3>
-                  <h4 className="text-sm font-semibold text-pink-400 mb-2">Scaler Topics</h4>
-                  <p className="text-xs text-slate-500">Certificate of Excellence • March 2026</p>
+
+                {/* Certificate Thumbnail Preview Banner */}
+                <div 
+                  onClick={() => setPreviewCert({ title: 'Java: Mastering Fundamentals (Scaler Topics)', image: scalerCert })}
+                  className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] max-h-44 flex items-center justify-center"
+                >
+                  <img 
+                    src={scalerCert} 
+                    alt="Scaler Topics Java Certificate" 
+                    className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/50 group-hover/thumb:bg-slate-950/20 transition flex items-center justify-center">
+                    <span className="px-3 py-1.5 rounded-xl bg-slate-900/90 text-xs font-semibold text-pink-300 border border-pink-500/40 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>Click to View Certificate</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {['86 Video Tutorials', '12 Modules', '9 Challenges', 'Java OOP'].map(tag => (
+                    <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
 
@@ -910,14 +987,14 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-pink-500/25 flex items-start gap-4 transition duration-300"
+                className="p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/25 flex items-start gap-4 transition duration-300"
               >
-                <div className="w-12 h-12 shrink-0 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400">
+                <div className="w-12 h-12 shrink-0 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400">
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white mb-1">Full Stack Developer</h3>
-                  <h4 className="text-sm font-semibold text-pink-400 mb-2">Skill High</h4>
+                  <h4 className="text-sm font-semibold text-teal-400 mb-2">Skill High</h4>
                   <p className="text-xs text-slate-500">Certificate of Excellence • 2025</p>
                 </div>
               </motion.div>
@@ -1342,6 +1419,55 @@ export default function App() {
         >
           <ArrowUp className="w-5 h-5" />
         </motion.button>
+      )}
+
+      {/* Certificate Lightbox Modal */}
+      {previewCert && (
+        <div 
+          onClick={() => setPreviewCert(null)}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md"
+        >
+          <motion.div 
+            initial={{ scale: 0.92, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-4xl w-full bg-slate-900/95 border border-white/15 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
+          >
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-slate-950/70">
+              <div className="flex items-center gap-2.5">
+                <Award className="w-5 h-5 text-teal-400" />
+                <h4 className="text-white font-bold text-sm sm:text-base truncate">{previewCert.title}</h4>
+              </div>
+              <button 
+                onClick={() => setPreviewCert(null)}
+                className="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center text-sm font-bold transition"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <div className="p-4 sm:p-6 overflow-auto flex items-center justify-center bg-slate-950/80">
+              <img 
+                src={previewCert.image} 
+                alt={previewCert.title} 
+                className="max-h-[68vh] w-auto object-contain rounded-xl shadow-2xl border border-white/10"
+              />
+            </div>
+
+            <div className="px-6 py-3 border-t border-white/10 bg-slate-950/70 flex items-center justify-between">
+              <span className="text-xs text-slate-400 font-mono">Official Certificate Credential</span>
+              <a 
+                href={previewCert.image} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-4 py-1.5 rounded-xl text-xs font-semibold bg-indigo-500 hover:bg-indigo-600 text-white inline-flex items-center gap-1.5 transition shadow-lg shadow-indigo-500/20"
+              >
+                <span>Open Full Image</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
       )}
 
     </div>
