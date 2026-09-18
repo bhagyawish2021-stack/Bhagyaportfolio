@@ -43,7 +43,7 @@ export default function App() {
   // Scroll spy to highlight active section in Navbar
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'education', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'certifications', 'education', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -140,7 +140,7 @@ export default function App() {
 
           {/* Desktop Navigation Links */}
           <ul className="hidden md:flex items-center gap-8 font-medium">
-            {['home', 'about', 'skills', 'education', 'projects', 'contact'].map((section) => (
+            {['home', 'about', 'skills', 'certifications', 'education', 'projects', 'contact'].map((section) => (
               <li key={section}>
                 <a 
                   href={`#${section}`}
@@ -688,319 +688,437 @@ export default function App() {
         </motion.div>
       </section>
 
-      {/* Education & Certifications Section */}
-      <section id="education" className="py-24 px-4 md:px-8 max-w-6xl mx-auto border-t border-slate-900">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          
-          {/* Education Timeline */}
-          <div className="lg:col-span-7">
-            <div className="mb-12">
-              <h2 className="text-3xl font-extrabold text-white inline-flex items-center gap-3">
-                <GraduationCap className="w-8 h-8 text-teal-400" />
-                <span>Education Timeline</span>
-              </h2>
-              <div className="h-1 w-20 bg-teal-500 rounded-full mt-4" />
-            </div>
-
-            <div className="relative pl-8 border-l-2 border-slate-800 space-y-12">
-              
-              {/* Parul University */}
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                {/* Node icon indicator */}
-                <div className="absolute top-1 -left-[41px] w-6 h-6 rounded-full bg-slate-950 border-2 border-teal-500 flex items-center justify-center text-[10px] text-teal-400 font-bold shadow-md shadow-teal-500/20">
-                  PU
-                </div>
-                
-                <div className="p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/20 hover:bg-slate-900/60 transition duration-300">
-                  <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                    <h3 className="text-xl font-bold text-white">B.Tech – Artificial Intelligence</h3>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 border border-teal-500/25 text-teal-300">
-                      2023 – 2027
-                    </span>
-                  </div>
-                  <h4 className="text-sm font-semibold text-slate-300 mb-4">Parul University</h4>
-                  <div className="flex items-center gap-2 text-sm text-slate-400">
-                    <span>Current CGPA:</span>
-                    <strong className="text-white text-base">7.98</strong>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Narayana Junior College */}
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="absolute top-1 -left-[41px] w-6 h-6 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-[10px] text-slate-400 font-bold">
-                  NC
-                </div>
-                
-                <div className="p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300">
-                  <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                    <h3 className="text-xl font-bold text-white">Intermediate (MPC)</h3>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
-                      2021 – 2023
-                    </span>
-                  </div>
-                  <h4 className="text-sm font-semibold text-slate-300 mb-4">Narayana Junior College, Srikakulam</h4>
-                  <div className="flex items-center gap-2 text-sm text-slate-400">
-                    <span>Score:</span>
-                    <strong className="text-white text-base">95%</strong>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Oxford High School */}
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="absolute top-1 -left-[41px] w-6 h-6 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-[10px] text-slate-400 font-bold">
-                  OH
-                </div>
-                
-                <div className="p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300">
-                  <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                    <h3 className="text-xl font-bold text-white">10th Standard (SSC)</h3>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
-                      2020 – 2021
-                    </span>
-                  </div>
-                  <h4 className="text-sm font-semibold text-slate-300 mb-4">Oxford High School, Srikakulam</h4>
-                  <div className="flex items-center gap-2 text-sm text-slate-400">
-                    <span>Score:</span>
-                    <strong className="text-white text-base">96%</strong>
-                  </div>
-                </div>
-              </motion.div>
-
-            </div>
+      {/* Certifications Section (Full width, placed BEFORE Education) */}
+      <section id="certifications" className="py-24 px-4 md:px-8 max-w-5xl mx-auto border-t border-slate-900">
+        <div className="mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold mb-3">
+            <Award className="w-3.5 h-3.5 text-pink-400" />
+            <span>Credentials & Validations</span>
           </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white flex items-center gap-3">
+            <span>Certifications</span>
+          </h2>
+          <p className="text-sm md:text-base text-slate-400 mt-2 max-w-2xl">
+            Verified industry certifications and professional credentials in Artificial Intelligence, Data Science, and Software Development.
+          </p>
+          <div className="h-1 w-20 bg-pink-500 rounded-full mt-4" />
+        </div>
 
-          {/* Certifications List */}
-          <div className="lg:col-span-5">
-            <div className="mb-12">
-              <h2 className="text-3xl font-extrabold text-white inline-flex items-center gap-3">
-                <Award className="w-8 h-8 text-pink-400" />
-                <span>Certifications</span>
-              </h2>
-              <div className="h-1 w-20 bg-pink-500 rounded-full mt-4" />
-            </div>
-
-            <div className="space-y-6">
-              
-              {/* Agentic AI Masters 2026 */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-teal-500/20 hover:border-teal-400/40 flex flex-col gap-4 transition duration-300 relative overflow-hidden group shadow-lg shadow-teal-500/5"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 border border-teal-500/20">
-                    <Brain className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/25">
-                        Udemy • 62 Hours • Aug 27, 2026
-                      </span>
-                      <a 
-                        href="https://ude.my/UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs text-teal-400 hover:text-teal-300 underline font-medium"
-                      >
-                        <span>Verify</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </div>
-                    <h3 className="text-lg font-bold text-white leading-snug">
-                      Agentic AI Masters 2026: LangChain, LangGraph & CrewAI
-                    </h3>
-                    <p className="text-xs text-slate-400 mt-1">
-                      Instructors: Dr. Satyajit Pattnaik & Satyajit Pattnaik
-                    </p>
-                  </div>
-                </div>
-
-                {/* Certificate Thumbnail Preview Banner */}
-                <div 
-                  onClick={() => setPreviewCert({ title: 'Agentic AI Masters 2026 (Udemy)', image: udemyCert })}
-                  className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] max-h-44 flex items-center justify-center"
-                >
-                  <img 
-                    src={udemyCert} 
-                    alt="Udemy Agentic AI Certificate" 
-                    className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-slate-950/50 group-hover/thumb:bg-slate-950/20 transition flex items-center justify-center">
-                    <span className="px-3 py-1.5 rounded-xl bg-slate-900/90 text-xs font-semibold text-teal-300 border border-teal-500/40 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
-                      <Eye className="w-3.5 h-3.5" />
-                      <span>Click to View Certificate</span>
+        {/* Certifications List - Displayed One by One */}
+        <div className="space-y-12">
+          
+          {/* Certificate 1: Agentic AI Masters 2026 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-teal-500/20 hover:border-teal-400/40 transition duration-300 relative overflow-hidden group shadow-xl shadow-teal-500/5"
+          >
+            {/* 1. Mentioned Certification Details */}
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-14 h-14 shrink-0 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 border border-teal-500/20">
+                <Brain className="w-7 h-7" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/25 font-semibold">
+                      Udemy • 62 Hours • Aug 27, 2026
+                    </span>
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                      Completed
                     </span>
                   </div>
+                  <a 
+                    href="https://ude.my/UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-teal-400 hover:text-teal-300 px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/20 hover:bg-teal-500/20 font-semibold transition"
+                  >
+                    <span>Verify Credential</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {['LangChain', 'LangGraph', 'CrewAI', 'Multi-Agent AI', '62 Hours'].map(tag => (
-                    <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-400 gap-2">
-                  <span className="truncate">Cert No: <span className="text-slate-300">UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff</span></span>
-                  <span>Ref: <span className="text-teal-400 font-bold">0004</span></span>
-                </div>
-              </motion.div>
-
-              {/* Data Science & Analytics (HP LIFE) */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-indigo-500/20 hover:border-indigo-400/40 flex flex-col gap-4 transition duration-300 relative overflow-hidden group shadow-lg shadow-indigo-500/5"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
-                    <Database className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/25">
-                        HP LIFE • HP Foundation
-                      </span>
-                      <span className="text-xs text-indigo-300 font-mono">Presented 6/9/2026</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-white leading-snug">
-                      Data Science & Analytics
-                    </h3>
-                    <p className="text-xs text-slate-400 mt-1">
-                      Executive Director: Michele Malejki, HP Foundation
-                    </p>
-                  </div>
-                </div>
-
-                {/* Certificate Thumbnail Preview Banner */}
-                <div 
-                  onClick={() => setPreviewCert({ title: 'Data Science & Analytics (HP LIFE)', image: hpCert })}
-                  className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] max-h-44 flex items-center justify-center"
-                >
-                  <img 
-                    src={hpCert} 
-                    alt="HP LIFE Data Science Certificate" 
-                    className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-slate-950/50 group-hover/thumb:bg-slate-950/20 transition flex items-center justify-center">
-                    <span className="px-3 py-1.5 rounded-xl bg-slate-900/90 text-xs font-semibold text-indigo-300 border border-indigo-500/40 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
-                      <Eye className="w-3.5 h-3.5" />
-                      <span>Click to View Certificate</span>
-                    </span>
-                  </div>
-                </div>
-
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Leading data science and analytics practices, methodologies, business impact analysis, and essential career analytics skills.
+                <h3 className="text-2xl font-bold text-white leading-tight mb-2">
+                  Agentic AI Masters 2026: LangChain, LangGraph & CrewAI
+                </h3>
+                
+                <p className="text-sm text-slate-300 mb-2">
+                  <span className="text-slate-400">Instructors:</span> <strong className="text-white">Dr. Satyajit Pattnaik & Satyajit Pattnaik</strong>
                 </p>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {['Data Science', 'Analytics', 'Business Intelligence', 'HP LIFE'].map(tag => (
-                    <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
+                <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                  Comprehensive specialization covering autonomous multi-agent systems, cyclic state graphs, agentic memory management, tool execution, CrewAI collaborative agent swarms, and enterprise-grade LLM orchestrations.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  {['LangChain', 'LangGraph', 'CrewAI', 'Multi-Agent AI', 'Autonomous Systems', '62 Hours'].map(tag => (
+                    <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-300 border border-slate-700/70">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="pt-2 border-t border-white/5 text-[11px] font-mono text-slate-400 truncate">
-                  Serial No: <span className="text-slate-300">c5d658cb-ea28-4441-a2d3-2a43512447e6</span>
+                <div className="pt-3 border-t border-white/5 flex flex-wrap items-center justify-between text-xs font-mono text-slate-400 gap-2">
+                  <span>Certificate No: <span className="text-slate-200">UC-9fdc956b-cfa4-42d5-b84d-5d2c47c245ff</span></span>
+                  <span>Reference No: <span className="text-teal-400 font-bold">0004</span></span>
                 </div>
-              </motion.div>
-
-              {/* Java Certification (Scaler Topics) */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-pink-500/20 hover:border-pink-500/40 flex flex-col gap-4 transition duration-300 relative overflow-hidden group shadow-lg shadow-pink-500/5"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 border border-pink-500/20">
-                    <Award className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-                      <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-pink-500/10 text-pink-300 border border-pink-500/25">
-                        Scaler Topics • 27 March 2026
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-1">Java: Mastering the Fundamentals</h3>
-                    <p className="text-xs text-slate-400">
-                      Anshuman Singh, Co-founder SCALER • Certificate of Excellence
-                    </p>
-                  </div>
-                </div>
-
-                {/* Certificate Thumbnail Preview Banner */}
-                <div 
-                  onClick={() => setPreviewCert({ title: 'Java: Mastering Fundamentals (Scaler Topics)', image: scalerCert })}
-                  className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] max-h-44 flex items-center justify-center"
-                >
-                  <img 
-                    src={scalerCert} 
-                    alt="Scaler Topics Java Certificate" 
-                    className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-slate-950/50 group-hover/thumb:bg-slate-950/20 transition flex items-center justify-center">
-                    <span className="px-3 py-1.5 rounded-xl bg-slate-900/90 text-xs font-semibold text-pink-300 border border-pink-500/40 shadow-lg flex items-center gap-1.5 backdrop-blur-md">
-                      <Eye className="w-3.5 h-3.5" />
-                      <span>Click to View Certificate</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {['86 Video Tutorials', '12 Modules', '9 Challenges', 'Java OOP'].map(tag => (
-                    <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Full Stack Developer */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/25 flex items-start gap-4 transition duration-300"
-              >
-                <div className="w-12 h-12 shrink-0 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400">
-                  <Award className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Full Stack Developer</h3>
-                  <h4 className="text-sm font-semibold text-teal-400 mb-2">Skill High</h4>
-                  <p className="text-xs text-slate-500">Certificate of Excellence • 2025</p>
-                </div>
-              </motion.div>
-
+              </div>
             </div>
+
+            {/* 2. Certificate Visual Preview Banner (Given after mentioned certification details) */}
+            <div className="mt-4 pt-4 border-t border-white/5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                  Official Certificate Document
+                </span>
+                <span className="text-xs text-teal-400 flex items-center gap-1">
+                  <Eye className="w-3.5 h-3.5" /> Click to enlarge
+                </span>
+              </div>
+              <div 
+                onClick={() => setPreviewCert({ title: 'Agentic AI Masters 2026 (Udemy)', image: udemyCert })}
+                className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] md:aspect-[21/9] max-h-72 flex items-center justify-center"
+              >
+                <img 
+                  src={udemyCert} 
+                  alt="Udemy Agentic AI Certificate" 
+                  className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-slate-950/40 group-hover/thumb:bg-slate-950/15 transition flex items-center justify-center">
+                  <span className="px-4 py-2 rounded-xl bg-slate-900/90 text-xs md:text-sm font-semibold text-teal-300 border border-teal-500/40 shadow-xl flex items-center gap-2 backdrop-blur-md group-hover/thumb:scale-105 transition">
+                    <Eye className="w-4 h-4" />
+                    <span>Click to View Full Certificate</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Certificate 2: Data Science & Analytics (HP LIFE) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-indigo-500/20 hover:border-indigo-400/40 transition duration-300 relative overflow-hidden group shadow-xl shadow-indigo-500/5"
+          >
+            {/* 1. Mentioned Certification Details */}
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-14 h-14 shrink-0 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
+                <Database className="w-7 h-7" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/25 font-semibold">
+                      HP LIFE • HP Foundation
+                    </span>
+                    <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-indigo-950/60 text-indigo-300 border border-indigo-800">
+                      Presented 6/9/2026
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-white leading-tight mb-2">
+                  Data Science & Analytics
+                </h3>
+                
+                <p className="text-sm text-slate-300 mb-2">
+                  <span className="text-slate-400">Awarded by:</span> <strong className="text-white">Michele Malejki</strong>, Executive Director, HP Foundation
+                </p>
+
+                <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                  By completing this course, learned about leading data science and analytics practices, methodologies, and tools, examined the benefits and challenges of a data-driven approach for businesses, and gained knowledge about essential skills needed to pursue a career in the field.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  {['Data Science', 'Analytics', 'Business Intelligence', 'Data-Driven Decision Making', 'HP LIFE'].map(tag => (
+                    <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-300 border border-slate-700/70">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="pt-3 border-t border-white/5 text-xs font-mono text-slate-400 truncate">
+                  Certificate Serial Number: <span className="text-slate-200">c5d658cb-ea28-4441-a2d3-2a43512447e6</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Certificate Visual Preview Banner (Given after mentioned certification details) */}
+            <div className="mt-4 pt-4 border-t border-white/5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                  Official Certificate Document
+                </span>
+                <span className="text-xs text-indigo-400 flex items-center gap-1">
+                  <Eye className="w-3.5 h-3.5" /> Click to enlarge
+                </span>
+              </div>
+              <div 
+                onClick={() => setPreviewCert({ title: 'Data Science & Analytics (HP LIFE)', image: hpCert })}
+                className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] md:aspect-[21/9] max-h-72 flex items-center justify-center"
+              >
+                <img 
+                  src={hpCert} 
+                  alt="HP LIFE Data Science Certificate" 
+                  className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-slate-950/40 group-hover/thumb:bg-slate-950/15 transition flex items-center justify-center">
+                  <span className="px-4 py-2 rounded-xl bg-slate-900/90 text-xs md:text-sm font-semibold text-indigo-300 border border-indigo-500/40 shadow-xl flex items-center gap-2 backdrop-blur-md group-hover/thumb:scale-105 transition">
+                    <Eye className="w-4 h-4" />
+                    <span>Click to View Full Certificate</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Certificate 3: Java Course - Mastering the Fundamentals (Scaler Topics) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-pink-500/20 hover:border-pink-500/40 transition duration-300 relative overflow-hidden group shadow-xl shadow-pink-500/5"
+          >
+            {/* 1. Mentioned Certification Details */}
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-14 h-14 shrink-0 rounded-2xl bg-pink-500/10 flex items-center justify-center text-pink-400 border border-pink-500/20">
+                <Award className="w-7 h-7" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-pink-500/10 text-pink-300 border border-pink-500/25 font-semibold">
+                      Scaler Topics • 27 March 2026
+                    </span>
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                      Certificate of Excellence
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-white leading-tight mb-2">
+                  Java Course: Mastering the Fundamentals
+                </h3>
+                
+                <p className="text-sm text-slate-300 mb-2">
+                  <span className="text-slate-400">Instructor & Signatory:</span> <strong className="text-white">Anshuman Singh</strong>, Co-founder SCALER
+                </p>
+
+                <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                  Mastered core Object-Oriented Programming (OOP), Java syntax, algorithmic logic, memory management, and problem-solving through comprehensive curriculum.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  {['86 Video Tutorials', '12 Modules', '9 Challenges', 'Java OOP', 'Data Structures', 'Scaler Topics'].map(tag => (
+                    <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-300 border border-slate-700/70">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="pt-3 border-t border-white/5 text-xs font-mono text-slate-400">
+                  Course Structure: <span className="text-slate-200">86 Video Tutorials • 12 Modules • 9 Challenges Completed</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Certificate Visual Preview Banner (Given after mentioned certification details) */}
+            <div className="mt-4 pt-4 border-t border-white/5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                  Official Certificate Document
+                </span>
+                <span className="text-xs text-pink-400 flex items-center gap-1">
+                  <Eye className="w-3.5 h-3.5" /> Click to enlarge
+                </span>
+              </div>
+              <div 
+                onClick={() => setPreviewCert({ title: 'Java: Mastering Fundamentals (Scaler Topics)', image: scalerCert })}
+                className="relative rounded-2xl overflow-hidden border border-white/10 group/thumb cursor-pointer bg-slate-950 aspect-[16/9] md:aspect-[21/9] max-h-72 flex items-center justify-center"
+              >
+                <img 
+                  src={scalerCert} 
+                  alt="Scaler Topics Java Certificate" 
+                  className="w-full h-full object-cover group-hover/thumb:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-slate-950/40 group-hover/thumb:bg-slate-950/15 transition flex items-center justify-center">
+                  <span className="px-4 py-2 rounded-xl bg-slate-900/90 text-xs md:text-sm font-semibold text-pink-300 border border-pink-500/40 shadow-xl flex items-center gap-2 backdrop-blur-md group-hover/thumb:scale-105 transition">
+                    <Eye className="w-4 h-4" />
+                    <span>Click to View Full Certificate</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Certificate 4: Full Stack Developer (Skill High) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-teal-500/20 hover:border-teal-400/40 transition duration-300 relative overflow-hidden group shadow-xl shadow-teal-500/5"
+          >
+            {/* Mentioned Certification Details */}
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 shrink-0 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 border border-teal-500/20">
+                <Award className="w-7 h-7" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/25 font-semibold">
+                      Skill High • 2025
+                    </span>
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                      Certificate of Excellence
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-white leading-tight mb-2">
+                  Full Stack Developer
+                </h3>
+                
+                <h4 className="text-sm font-semibold text-teal-400 mb-2">Skill High</h4>
+                
+                <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                  Full stack web engineering covering frontend component architectures, RESTful API development, state management, and backend database integrations.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  {['Full Stack', 'Frontend', 'Backend APIs', 'Web Architecture', 'Skill High'].map(tag => (
+                    <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800/90 text-slate-300 border border-slate-700/70">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* Education Section (Full width, placed AFTER Certifications) */}
+      <section id="education" className="py-24 px-4 md:px-8 max-w-5xl mx-auto border-t border-slate-900">
+        <div className="mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold mb-3">
+            <GraduationCap className="w-3.5 h-3.5 text-teal-400" />
+            <span>Academic Background</span>
           </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white flex items-center gap-3">
+            <span>Education Timeline</span>
+          </h2>
+          <p className="text-sm md:text-base text-slate-400 mt-2 max-w-2xl">
+            Formal education, degree programs, and academic milestones.
+          </p>
+          <div className="h-1 w-20 bg-teal-500 rounded-full mt-4" />
+        </div>
+
+        <div className="relative pl-8 md:pl-12 border-l-2 border-slate-800 space-y-12">
+          
+          {/* Parul University */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            {/* Node icon indicator */}
+            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-teal-500 flex items-center justify-center text-xs text-teal-400 font-bold shadow-lg shadow-teal-500/25">
+              PU
+            </div>
+            
+            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-teal-500/25 hover:bg-slate-900/60 transition duration-300 shadow-lg">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">B.Tech – Artificial Intelligence</h3>
+                  <h4 className="text-base font-semibold text-slate-300">Parul University</h4>
+                </div>
+                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-teal-500/10 border border-teal-500/25 text-teal-300">
+                  2023 – 2027
+                </span>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed my-4">
+                Specialized in core Artificial Intelligence, Machine Learning, Deep Learning, Neural Networks, Computer Vision, Natural Language Processing, and Advanced Data Structures & Algorithms.
+              </p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
+                <span>Current Academic Standing:</span>
+                <span className="px-3 py-1 rounded-full bg-teal-500/15 border border-teal-500/30 text-teal-300 font-bold text-base">
+                  CGPA: 7.98
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Narayana Junior College */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-xs text-slate-400 font-bold">
+              NC
+            </div>
+            
+            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300 shadow-lg">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">Intermediate (MPC)</h3>
+                  <h4 className="text-base font-semibold text-slate-300">Narayana Junior College, Srikakulam</h4>
+                </div>
+                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
+                  2021 – 2023
+                </span>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed my-4">
+                Focused on Mathematics, Physics, and Chemistry with a strong emphasis on analytical problem-solving and rigorous scientific principles.
+              </p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
+                <span>Academic Score:</span>
+                <span className="px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 font-bold text-base">
+                  95%
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Oxford High School */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute top-2 -left-[45px] md:-left-[61px] w-8 h-8 rounded-full bg-slate-950 border-2 border-slate-700 flex items-center justify-center text-xs text-slate-400 font-bold">
+              OH
+            </div>
+            
+            <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 hover:border-slate-700 hover:bg-slate-900/60 transition duration-300 shadow-lg">
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">10th Standard (SSC)</h3>
+                  <h4 className="text-base font-semibold text-slate-300">Oxford High School, Srikakulam</h4>
+                </div>
+                <span className="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-400">
+                  2020 – 2021
+                </span>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed my-4">
+                Secondary School Certificate with distinction in science, mathematics, and computer applications.
+              </p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/5 text-sm text-slate-400">
+                <span>Academic Score:</span>
+                <span className="px-3 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 font-bold text-base">
+                  96%
+                </span>
+              </div>
+            </div>
+          </motion.div>
 
         </div>
       </section>
